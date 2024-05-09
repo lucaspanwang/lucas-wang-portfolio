@@ -1,0 +1,205 @@
+.home-page {
+  min-height: calc(100vh - 80px);
+  color: var(--dark);
+  background-color: var(--bright);
+  position: relative;
+}
+
+.about-section {
+  height: 100vh;
+  padding-top: 0;
+  padding-bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  background-color: var(--dark);
+}
+
+.about-ref-box {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: calc(100% - 1px);
+  z-index: -1;
+}
+
+.intro-container {
+  justify-content: space-around;
+  align-items: center;
+  gap: 3.3rem;
+}
+
+.intro-text-container {
+  align-items: flex-start;
+
+  h2 {
+    font-size: 3.2rem;
+    font-weight: 700;
+    color: var(--light-grey);
+    letter-spacing: 1px;
+
+    .emoji-hand {
+      width: 3rem;
+      margin-bottom: -0.2rem;
+    }
+  }
+
+  .gradient-color-text {
+    position: relative;
+    color: transparent;
+    background: linear-gradient(15deg, #13b0f5, #e70faa);
+    -webkit-background-clip: text; /* For webkit browsers */
+    background-clip: text;
+  }
+
+  .type-writter-container {
+    width: 100%;
+    height: 3rem;
+  }
+
+  .type-writter-h2 {
+    font-size: 3rem;
+    font-weight: 600;
+    color: var(--light-grey);
+    letter-spacing: -2px;
+  }
+}
+
+.personal-photo-container {
+  width: 330px;
+  height: 330px;
+  position: relative;
+  padding: 9px;
+  cursor: pointer;
+
+  .personal-photo {
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    position: relative;
+    z-index: 1;
+  }
+
+  .linkedin-container {
+    transform: scale(0.5);
+    position: absolute;
+    border-radius: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    z-index: 4;
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .linkedin-container.active {
+    transform: scale(1);
+    width: 95%;
+    height: 95%;
+    top: 2.5%;
+    left: 2.5%;
+    opacity: 1;
+    transition: all 0.5s ease;
+  }
+
+  .gradient-frame {
+    position: absolute;
+    width: 105%;
+    left: -2.5%;
+    top: -2.5%;
+    z-index: 2;
+  }
+}
+
+.personal-photo-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 100%;
+  padding: 9px;
+  background: linear-gradient(15deg, #13b0f5, #e70faa);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+.in-touch-button {
+  margin-top: 32px;
+  border-radius: 50px;
+  background-color: var(--white);
+  color: var(--black);
+  font-weight: 500;
+  padding: 5px 25px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+
+  .in-touch-icon {
+    padding-top: 0.5rem;
+    margin-right: 0.8rem;
+  }
+}
+
+.scroll-down-container {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  padding-bottom: 20px;
+  font-weight: 400;
+  cursor: pointer;
+  gap: 8px;
+  align-items: flex-start;
+  color: var(--white);
+}
+
+@media screen and (min-width: 960px) {
+  .in-touch-button:hover {
+    background: linear-gradient(15deg, #a1e3ff, #ffbcec);
+  }
+
+  .scroll-down-container:hover {
+    transition: all 0.5s;
+    transform: scale(1.2);
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .intro-container {
+    align-items: center;
+
+    h2 {
+      font-size: 2rem;
+
+      .emoji-hand {
+        width: 1.8rem;
+        margin-bottom: -0.2rem;
+      }
+    }
+
+    .type-writter-h2 {
+      font-size: 1.8rem;
+      color: var(--light-grey);
+    }
+  }
+
+  .about-section {
+    height: 100vh;
+    min-height: 700px;
+  }
+
+  .personal-photo-container {
+    width: 220px;
+    height: 220px;
+  }
+
+  .intro-text-container {
+    .type-writter-container {
+      height: 2.5rem;
+    }
+  }
+}
