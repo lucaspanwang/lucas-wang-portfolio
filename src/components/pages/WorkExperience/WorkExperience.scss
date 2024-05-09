@@ -1,0 +1,99 @@
+.work-experience-section {
+  padding-top: calc(80px + 60px);
+}
+
+.work-exp-cards-wrapper {
+  gap: 2rem;
+}
+
+.work-exp-card-container {
+  width: 100%;
+  max-width: 1000px;
+  background-color: var(--white);
+  padding: 1.5rem 2rem;
+  border-radius: 16px;
+  box-shadow: 0px 2.67px 5.34px rgba(30, 30, 30, 0.3);
+
+  .work-exp-header {
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+
+    .company-row-container {
+      align-items: center;
+      gap: 1rem;
+    }
+
+    img {
+      width: 60px;
+      cursor: pointer;
+    }
+
+    .work-exp-header-col1 {
+      align-items: flex-start;
+    }
+
+    .work-exp-header-col2 {
+      align-items: flex-end;
+    }
+  }
+
+  .work-exp-detail-container {
+    padding-top: 1.5rem;
+    align-items: flex-start;
+    gap: 8px;
+
+    li {
+      position: relative;
+      margin-left: 1.6rem;
+    }
+
+    li::before {
+      content: "";
+      position: absolute;
+      left: -1.6rem;
+      top: 0.76rem;
+      transform: translateY(-50%);
+      width: 0.44rem;
+      height: 0.44rem;
+      background-color: var(--dark);
+      border-radius: 100%;
+    }
+  }
+}
+
+.company-container {
+  gap: 8px;
+  color: var(--dark);
+  // cursor: pointer;
+
+  .company-link-icon {
+    width: 1.1rem;
+    height: 1.1rem;
+    margin-bottom: 0.2rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .work-exp-card-container {
+    .work-exp-header {
+      flex-direction: column;
+      align-items: flex-start;
+
+      .work-exp-header-col1 {
+        align-items: flex-start;
+      }
+
+      .work-exp-header-col2 {
+        align-items: flex-start;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .work-experience-section {
+    padding-top: calc(60px + 60px);
+  }
+}
