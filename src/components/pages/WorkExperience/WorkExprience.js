@@ -42,7 +42,7 @@ const workExpItems = [
     imgSrc: "/images/HSBC-symbol.png",
     companyName: "HSBC",
     companyLink: "https://www.linkedin.com/company/hsbc/",
-    jobTitle: "Software Developer Intern",
+    jobTitle: "Software Developer",
     place: "Vancouver, Canada",
     timeRange: "Jun 2022 – Apr 2023",
     detailList: [
@@ -50,7 +50,7 @@ const workExpItems = [
         Collaborated with global team members to develop responsive websites for
         HSBC's account opening systems in Mexico, the US, and Canada, utilizing
         technologies such as <SemiBold>React, JavaScript, Redux</SemiBold> and{" "}
-        <SemiBold>PostCSS</SemiBold>
+        <SemiBold>Node.js</SemiBold>
       </>,
       <>
         Independently built a comprehensive{" "}
