@@ -1,18 +1,29 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Icons } from "../../Icons";
 import { Modal } from "antd";
 import "./ProjectCard.scss";
+import { useNavigate, useLocation } from "react-router-dom";
 
 export default function ProjectCard({ projcetItem }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const { pathname, hash } = useLocation();
+  const navigate = useNavigate();
 
   const showModal = () => {
-    setIsModalOpen(true);
+    navigate(`#${projcetItem.hash}`);
   };
 
   const handleCancel = () => {
-    setIsModalOpen(false);
+    navigate(pathname, { replace: true });
   };
+
+  useEffect(() => {
+    if (hash === `#${projcetItem.hash}`) {
+      setIsModalOpen(true);
+    } else {
+      setIsModalOpen(false);
+    }
+  }, [hash]);
 
   return (
     <>
@@ -31,10 +42,7 @@ export default function ProjectCard({ projcetItem }) {
               <div className="content-section">
                 <h4>
                   Link:{" "}
-                  <a
-                    href={projcetItem.link}
-                    target="_blank"
-                  >
+                  <a href={projcetItem.link} target="_blank">
                     {projcetItem.link}
                   </a>
                 </h4>
