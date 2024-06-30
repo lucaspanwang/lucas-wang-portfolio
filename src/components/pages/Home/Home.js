@@ -54,10 +54,6 @@ export default function Home({ screenWidth }) {
   }, [isAboutSectionInView]);
 
   useEffect(() => {
-    console.log(location.hash);
-  }, [location.hash]);
-
-  useEffect(() => {
     switch (sectionName) {
       case "/":
         break;
