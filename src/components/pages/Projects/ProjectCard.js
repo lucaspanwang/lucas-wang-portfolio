@@ -3,9 +3,11 @@ import { Icons } from "../../Icons";
 import { Modal } from "antd";
 import "./ProjectCard.scss";
 import { useNavigate, useLocation } from "react-router-dom";
+import { OVERVIEW_STATUS } from "./Projects.constants";
 
 export default function ProjectCard({ projcetItem }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [overviewStatus, setOverviewStatus] = useState(OVERVIEW_STATUS.COVER);
   const { pathname, hash } = useLocation();
   const navigate = useNavigate();
 
@@ -32,10 +34,66 @@ export default function ProjectCard({ projcetItem }) {
         open={isModalOpen}
         onCancel={handleCancel}
         footer={null}
-        width="800px"
+        width="1000px"
       >
         <div className="modal-container">
-          <img src={projcetItem.imgSrc} className="modal-cover-image" />
+          <div className="overview-section">
+            <div className="select-container">
+              <span
+                className={
+                  overviewStatus === OVERVIEW_STATUS.COVER ? "active" : ""
+                }
+                onClick={() => setOverviewStatus(OVERVIEW_STATUS.COVER)}
+              >
+                Cover
+              </span>
+              {projcetItem.desktop && (
+                <span
+                  className={
+                    overviewStatus === OVERVIEW_STATUS.DESKTOP ? "active" : ""
+                  }
+                  onClick={() => setOverviewStatus(OVERVIEW_STATUS.DESKTOP)}
+                >
+                  Desktop
+                </span>
+              )}
+              {projcetItem.mobile && (
+                <span
+                  className={
+                    overviewStatus === OVERVIEW_STATUS.MOBILE ? "active" : ""
+                  }
+                  onClick={() => setOverviewStatus(OVERVIEW_STATUS.MOBILE)}
+                >
+                  Mobile
+                </span>
+              )}
+            </div>
+            {overviewStatus === OVERVIEW_STATUS.COVER && (
+              <img src={projcetItem.imgSrc} className="modal-cover-image" />
+            )}
+            {overviewStatus === OVERVIEW_STATUS.DESKTOP && (
+              <div className="desktop-section">
+                <div className="desktop-image-wrapper">
+                  <img
+                    src={projcetItem.desktop}
+                    alt={projcetItem.desktop}
+                    className="desktop-image"
+                  />
+                </div>
+              </div>
+            )}
+            {overviewStatus === OVERVIEW_STATUS.MOBILE && (
+              <div className="mobile-section">
+                <div className="mobile-image-wrapper">
+                  <img
+                    src={projcetItem.mobile}
+                    alt={projcetItem.mobile}
+                    className="mobile-image"
+                  />
+                </div>
+              </div>
+            )}
+          </div>
           <div className="containt-container">
             <h3>{projcetItem.projectTitle}</h3>
             {projcetItem.link && (
@@ -46,6 +104,12 @@ export default function ProjectCard({ projcetItem }) {
                     {projcetItem.link}
                   </a>
                 </h4>
+              </div>
+            )}
+            {projcetItem.timeRange && (
+              <div className="content-section">
+                <h4>Time Range</h4>
+                <p>{projcetItem.timeRange}</p>
               </div>
             )}
             {projcetItem.techStacks && (
@@ -75,6 +139,7 @@ export default function ProjectCard({ projcetItem }) {
         ></div>
         <div className="project-card-contents">
           <h3>{projcetItem.projectTitle}</h3>
+          <p className="time-range">{projcetItem.timeRange}</p>
           <p>{projcetItem.description}</p>
           <div className="see-more-container" onClick={showModal}>
             See More <Icons.externalLink className="see-more-icon" />
