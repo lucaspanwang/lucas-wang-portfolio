@@ -9,17 +9,105 @@
   align-items: center;
   gap: 1rem;
 
-  .modal-cover-image {
+  .overview-section {
+    position: relative;
     width: 100%;
-    max-width: 700px;
-    border-radius: 10px;
+    max-width: 900px;
+    display: flex;
+    justify-content: center;
+
+    .select-container {
+      width: 100%;
+      position: absolute;
+      top: 10px;
+      z-index: 2;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 0 12px;
+
+      span {
+        background-color: var(--light-dark);
+        color: var(--white);
+        font-size: 0.9rem;
+        border-radius: 16px;
+        padding: 2px 12px;
+        font-weight: var(--font-medium);
+        opacity: 0.7;
+        cursor: pointer;
+      }
+
+      span:hover {
+        opacity: 1;
+      }
+
+      span.active {
+        background-color: var(--blue);
+        opacity: 1;
+      }
+    }
+
+    .modal-cover-image {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .desktop-section {
+      margin-top: 3rem;
+      width: 100%;
+      aspect-ratio: 15.7/9;
+      position: relative;
+      background-color: black;
+      border-radius: 24px;
+      box-shadow: 5px 12px 12px rgba(50, 50, 50, 0.6);
+
+      .desktop-image-wrapper {
+        position: absolute;
+        width: 96%;
+        height: 94%;
+        top: 3%;
+        left: 2%;
+        border-radius: 16px;
+        overflow: auto;
+        background-color: white;
+
+        .desktop-image {
+          width: 100%;
+        }
+      }
+    }
+
+    .mobile-section {
+      margin-top: 3rem;
+      height: 55vh;
+      aspect-ratio: 9/19.9;
+      position: relative;
+      background-color: black;
+      border-radius: 24px;
+      box-shadow: 5px 12px 12px rgba(50, 50, 50, 0.6);
+
+      .mobile-image-wrapper {
+        position: absolute;
+        width: 96%;
+        height: 94%;
+        top: 3%;
+        left: 2%;
+        border-radius: 16px;
+        overflow: auto;
+        background-color: white;
+
+        .mobile-image {
+          width: 100%;
+        }
+      }
+    }
   }
 
   .containt-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
+    gap: 1.8rem;
 
     h3 {
       font-size: 1.3rem;
@@ -28,7 +116,7 @@
 
     h4 {
       width: 100%;
-      font-size: 1.1rem;
+      font-size: 1.3rem;
       font-weight: var(--font-semibold);
 
       a {
@@ -47,7 +135,6 @@
       width: 100%;
       display: flex;
       flex-direction: column;
-      gap: 4px;
     }
 
     .span-container {

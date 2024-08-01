@@ -8,7 +8,7 @@ const workExpItems = [
     companyLink: "https://www.linkedin.com/company/v-max-media-corp/mycompany/",
     jobTitle: "Software Developer",
     place: "Vancouver, Canada",
-    timeRange: "Sep 2023 – Present",
+    timeRange: "Sep 2023 – Apr 2024 · 8 mos",
     detailList: [
       <>
         Spearheaded the development of the V-MAX Official Website, 3 dashboard
@@ -42,9 +42,9 @@ const workExpItems = [
     imgSrc: "/images/HSBC-symbol.png",
     companyName: "HSBC",
     companyLink: "https://www.linkedin.com/company/hsbc/",
-    jobTitle: "Software Developer",
+    jobTitle: "Software Developer Intern",
     place: "Vancouver, Canada",
-    timeRange: "Jun 2022 – Apr 2023",
+    timeRange: "Jun 2022 – Apr 2023 · 11 mos",
     detailList: [
       <>
         Collaborated with global team members to develop responsive websites for
@@ -87,7 +87,7 @@ const workExpItems = [
     companyLink: "https://www.linkedin.com/company/ss-c-technologies/",
     jobTitle: "Software Developer Intern",
     place: "Beijing, China",
-    timeRange: "Jun 2021 – Sep 2021",
+    timeRange: "Jun 2021 – Sep 2021 · 4 mos",
     detailList: [
       <>
         Collaborated with a global team across Beijing and San Francisco to
